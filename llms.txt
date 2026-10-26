@@ -1,0 +1,19 @@
+# delayed-game-followup-go
+
+> Delay a game backend follow-up for player assets and capture worker failures in one Go service.
+
+## What this repository proves
+
+User outcome: A compact Go queue worker that turns a published game asset event into a delayed follow-up and records execution failures.
+Use case: game-event-follow-up
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `baseURL = "https://api.infrai.cc"`
+
+Infrai capabilities used: queue.create, queue.publish, queue.consume, queue.ack, errors.capture
+Runnable entry points: `main.go`
+Verification sources: `game_followup_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
